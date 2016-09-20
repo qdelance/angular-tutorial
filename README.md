@@ -1,3 +1,12 @@
 # Angular2 Tutorial
 
-This is just https://angular.io/docs/ts/latest/tutorial/ AKA Tour of heroes sample
+## Description
+
+This is just [Tour of heroes](https://angular.io/docs/ts/latest/tutorial/)
+
+## Install
+
+```bash
+$ npm install
+$ rpm run typings # deprecation here
+```
