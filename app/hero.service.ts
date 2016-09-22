@@ -9,6 +9,12 @@ export class HeroService {
     constructor(private logger: Logger) {
     }
 
+    getHero(id: number): Promise<Hero> {
+        this.logger.log('Getting hero for id ' + id + ' ...');
+        return this.getHeroes()
+            .then(heroes => heroes.find(hero => hero.id === id));
+    }
+
     getHeroes(): Promise<Hero[]> {
         this.logger.log('Getting heroes ...');
         return Promise.resolve(HEROES);
