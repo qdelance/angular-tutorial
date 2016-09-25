@@ -38,6 +38,16 @@ export class HeroService {
             .catch(this.handleError);
     }
 
+    delete(id: number): Promise<void> {
+        this.logger.log('Delete hero for id ' + id);
+        const url = `${this.heroesUrl}/${id}`;
+        return this.http
+            .delete(url, {headers: this.headers})
+            .toPromise()
+            .then(() => null)
+            .catch(this.handleError);
+    }
+
     getHero(id: number): Promise<Hero> {
         this.logger.log('Getting hero for id ' + id);
         return this.getHeroes()
